@@ -1,0 +1,20 @@
+<h1>May My Route</h1>
+
+<form action="/map" method="POST">
+
+  <label for="map_start">Start:</label>
+  <select id="map_start" name="start">
+  	<% @data.each do |element| %>
+    <option value="<%=[element["lat"]/1000000.00, element["lng"] /1000000.00] %>"><%=element["name"]%></option><% end %>
+  </select>
+
+  <label for="map_end">End:</label>
+  <select id="map_end" name="end">
+  	<% @data.each do |element| %>
+    <option value="<%=[element["lat"]/1000000.00, element["lng"]/1000000.00] %>"><%=element["name"]%></option><% end %>
+  </select>
+
+  <button type="submit" value="RSVP">Submit</button>
+
+</form>
+

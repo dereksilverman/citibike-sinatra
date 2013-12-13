@@ -20,7 +20,19 @@ module Citibike
     end
 
     get '/' do
+      @data
       erb :home
+    end
+
+    get '/form' do
+      @data
+      erb :form
+    end
+
+    post '/:form' do
+      @start_station = params["start"]
+      @end_station = params["end"]
+      erb :map
     end
 
   end
